@@ -149,65 +149,65 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
-  //contact form validation function
-  var form = document.getElementById('request-form');
-  var nameInput = document.getElementById('name');
-  var emailInput = document.getElementById('email');
-  var phoneInput = document.getElementById('phone');
-  var messageInput = document.getElementById('message');
+  // //contact form validation function
+  // var form = document.getElementById('request-form');
+  // var nameInput = document.getElementById('name');
+  // var emailInput = document.getElementById('email');
+  // var phoneInput = document.getElementById('phone');
+  // var messageInput = document.getElementById('message');
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+  // form.addEventListener('submit', function(event) {
+  //   event.preventDefault();
 
-    var isFormValid = true;
+  //   var isFormValid = true;
 
-    if (!validateField(nameInput, /^[ა-ჰ\s]+$/)) {
-      isFormValid = false;
-    }
-    if (!validateField(emailInput, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-      isFormValid = false;
-    }
-    if (!validateField(phoneInput, /^\d{9}$/)) {
-      isFormValid = false;
-    }
-    if (!validateField(messageInput)) {
-      isFormValid = false;
-    }
+  //   if (!validateField(nameInput, /^[ა-ჰ\s]+$/)) {
+  //     isFormValid = false;
+  //   }
+  //   if (!validateField(emailInput, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+  //     isFormValid = false;
+  //   }
+  //   if (!validateField(phoneInput, /^\d{9}$/)) {
+  //     isFormValid = false;
+  //   }
+  //   if (!validateField(messageInput)) {
+  //     isFormValid = false;
+  //   }
 
-    if (isFormValid) {
+  //   if (isFormValid) {
       // Form is valid, perform desired actions
       // For example, you can use AJAX to send the form data to the server
       // or display a success message
 
       // Example: Send form data using AJAX
-      var formData = {
-        name: nameInput.value.trim(),
-        email: emailInput.value.trim(),
-        phone: phoneInput.value.trim(),
-        message: messageInput.value.trim()
-      };
+  //     var formData = {
+  //       name: nameInput.value.trim(),
+  //       email: emailInput.value.trim(),
+  //       phone: phoneInput.value.trim(),
+  //       message: messageInput.value.trim()
+  //     };
 
-      // Perform AJAX request here to send formData to the server
-      // ...
+  //     // Perform AJAX request here to send formData to the server
+  //     // ...
 
-      // Display a success message or perform other actions
-      alert('Form submitted successfully');
-    } else {
-      // Show error message or perform other actions
-      alert('Please fill in all required fields correctly.');
-    }
-  });
+  //     // Display a success message or perform other actions
+  //     alert('Form submitted successfully');
+  //   } else {
+  //     // Show error message or perform other actions
+  //     alert('Please fill in all required fields correctly.');
+  //   }
+  // });
 
-  function validateField(field, regex) {
-    var value = field.value.trim();
-    if (value === '' || (regex && !regex.test(value))) {
-      field.classList.add('error');
-      return false;
-    } else {
-      field.classList.remove('error');
-      return true;
-    }
-  }
+  // function validateField(field, regex) {
+  //   var value = field.value.trim();
+  //   if (value === '' || (regex && !regex.test(value))) {
+  //     field.classList.add('error');
+  //     return false;
+  //   } else {
+  //     field.classList.remove('error');
+  //     return true;
+  //   }
+  // }
   
   // //subscribe form validation
   
@@ -234,6 +234,22 @@ document.addEventListener('DOMContentLoaded', function() {
   // }
   
 
+//burger function 
+let burgerbtn = document.querySelector(".burger-logo");
+let burgerMenu = document.querySelector(".nav-wrapper");
+let icon1 = document.querySelector(".burger-logo .bar:nth-child(1)");
+let icon2 = document.querySelector(".burger-logo .bar:nth-child(2)");
+let icon3 = document.querySelector(".burger-logo .bar:nth-child(3)");
+
+function toggleMenu() {
+  burgerMenu.classList.toggle("li-active");
+  icon1.classList.toggle("close-icon1");
+  icon2.classList.toggle("close-icon2");
+  icon3.classList.toggle("close-icon3");
+  burgerbtn.classList.toggle("logo-active");
+}
+
+burgerbtn.addEventListener("click", toggleMenu);
 
 
 

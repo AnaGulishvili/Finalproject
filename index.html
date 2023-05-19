@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/responsive.css">
 
     <link rel="stylesheet" href="//cdn.web-fonts.ge/fonts/bpg-sans/css/bpg-sans.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" >
     <script src="https://cdnjs.com/libraries/font-awesome"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -21,10 +21,10 @@
     <meta name="about-us" content="ჩვენს თანამედროვე ხელოვნების მუზეუმში აღმოაჩენთ თანამედროვე ხელოვნების შთამბეჭდავი სამყაროს. გაეცანით ახალი იდეებით ინსპირირებულ გამოფენებს, ინოვაციურ ინსტალაციებს და ცნობილი, თუ უცნობი ქართველი მხატვრების შედევრებს.">
     <meta name="author" content="Ana Gulishvili">
     <!--FB meta tags-->
-    <meta property="og:title" content="Tbilisi Contemporary Art Museum">
-    <meta property="og:description" content="ჩვენს თანამედროვე ხელოვნების მუზეუმში აღმოაჩენთ თანამედროვე ხელოვნების შთამბეჭდავი სამყაროს. გაეცანით ახალი იდეებით ინსპირირებულ გამოფენებს, ინოვაციურ ინსტალაციებს და ცნობილი, თუ უცნობი ქართველი მხატვრების შედევრებს.>
-    <meta property="og:image" content="images/splide1.png">
-    <meta property="og:url" content="#"> 
+    <meta property="title" content="Tbilisi Contemporary Art Museum">
+    <meta property="description" content="ჩვენს თანამედროვე ხელოვნების მუზეუმში აღმოაჩენთ თანამედროვე ხელოვნების შთამბეჭდავი სამყაროს. გაეცანით ახალი იდეებით ინსპირირებულ გამოფენებს, ინოვაციურ ინსტალაციებს და ცნობილი, თუ უცნობი ქართველი მხატვრების შედევრებს">
+    <meta property="image" content="#">
+    <meta property="url" content="#"> 
 </head>
 <body>
     <section class="container">
@@ -39,14 +39,19 @@
         <header id="header" class="nav-container">
             <a href="index.html"><img src="images/logo_transparent.png" class="logo-image" alt="logo"></a>
             <nav>
-                <ul class="nav-wrapper">
-                    <a href="#header"><li>მთავარი</li></a>
-                    <a href="#about-container"><li>ჩვენს შესახებ</li></a>
-                    <a href="#newin-container"><li>გამოფენები</li></a>
-                    <a href="#print-section"><li>პრინტები</li></a>
-                    <a href="#"><li><i class="fa-solid fa-cart-shopping"></i></li></a>
-                    <a href="#contact"><button class="contactbtn">კონტაქტი</button></a>
+                <ul class="nav-wrapper visible">
+                    <li><a href="#header">მთავარი</a></li>
+                    <li><a href="#about-container">ჩვენს შესახებ</a></li>
+                    <li><a href="#newin-container">გამოფენები</a></li>
+                    <li><a href="#print-section">პრინტები</a></li>
+                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <a href="#contact"><div class="contactbtn">კონტაქტი</div></a>
                 </ul>
+                 <div class="burger-logo">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </nav>
         </header>
         <div class="text-wrapper">
@@ -55,7 +60,7 @@
             <p class="slogan">ქართული თანამედროვე ხელოვნება <br>ერთ სივრცეში</p>
         </div>
         <div class="btn-new">
-            <a href="#newin-container"><p>ახლა მუზეუმში<i class="fa-sharp fa-solid fa-chevron-down"></i></p></a>
+            <a href="#newin-container"><p class="news-p">ახლა მუზეუმში<i class="fa-sharp fa-solid fa-chevron-down"></i></p></a>
         </div>
     </section>
     <!--new in museum section-->
@@ -86,9 +91,9 @@
             <div class="splide" aria-label="Splide Basic HTML Example">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <li class="splide__slide"><img src="images/splide1.jpg" class="carousel-image"></li>
-                        <li class="splide__slide"><img src="images/splide2.jpg" class="carousel-image second-image"></li>
-                        <li class="splide__slide" class="carousel-image"><img src="images/splide3.jpg" class="carousel-image"></li>
+                        <li class="splide__slide"><img src="images/splide1.jpg" class="carousel-image" alt="museum image"></li>
+                        <li class="splide__slide"><img src="images/splide2.jpg" class="carousel-image second-image"  alt="museum image"></li>
+                        <li class="splide__slide"><img src="images/splide3.jpg" class="carousel-image"  alt="museum image"></li>
                     </ul>
                 </div>
             </div>
@@ -107,23 +112,14 @@
                 <p class="about-btn">მეტი <i class="fa-solid fa-chevron-down"></i> </p>
                 
             </div>
-            <!-- <div class="splide" aria-label="Splide Basic HTML Example">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <li class="splide__slide"><img src="images/splide1.jpg" class="carousel-image"></li>
-                        <li class="splide__slide"><img src="images/splide2.jpg" class="carousel-image second-image"></li>
-                        <li class="splide__slide" class="carousel-image"><img src="images/splide3.jpg" class="carousel-image"></li>
-                    </ul>
-                </div>
-            </div> -->
         </div>
+    </section>
            
-    
     <!--shop section-->    
    <section id="print-section" class="print-section"> 
 
         <h2>პრინტები</h2>
-        <h3>ჩვენთან თანამედროვე ქართველი მხატვრების პრინტების შეძენა ახლა უკვე ხელმისაწვდომია</h2>
+        <h3>ჩვენთან თანამედროვე ქართველი მხატვრების პრინტების შეძენა ახლა უკვე ხელმისაწვდომია</h3>
         <div id="print-container">
     
         </div>
@@ -161,16 +157,14 @@
             <div class="address-wrapper">
                 <h2>კონტაქტი</h2>
                 <ul class="address-ul">
-                    <a href="https://goo.gl/maps/iqHHBt63eCCfcf1X9" target="_blank"><li><i class="fa-solid fa-location-dot icon"></i>Rustaveli Ave. 27, Tbilisi, Georgia</li></a>
+                    <li><a href="https://goo.gl/maps/iqHHBt63eCCfcf1X9" target="_blank"><i class="fa-solid fa-location-dot icon"></i>Rustaveli Ave. 27, Tbilisi, Georgia</a></li>
 
-                    <li><i class="fa-solid fa-phone icon"></i><a href="tel: 032 298-60-04">032 298-60-04</a><br>
+                    <li><i class="fa-solid fa-phone icon"></i><a href="tel:0322986004">032 298-60-04</a><br><a href="tel:0322986030" class="move-right">032 298-60-30</a></li>
 
-                    <a href="tel: 032 298-60-30"></a>032 298-60-30</li>
-
-                    <a href = "mailto: info@momatbilisi.ge"><li><i class="fa-regular fa-envelope icon"></i>info@momatbilisi.ge</li></a>
+                    <li><i class="fa-regular fa-envelope icon"></i><a href = "mailto: info@momatbilisi.ge">info@momatbilisi.ge</a></li>
 
                     <li><i class="fa-regular fa-calendar-days icon"></i>სამუშაო საათები: 11:00-18:00<br>
-                        დასვენების დღე: სამშაბათი</li>
+                        <span class="move-right">დასვენების დღე: სამშაბათი</span></li>
                 </ul>
             </div>
 
@@ -200,7 +194,7 @@
                     <button type="submit" class="submit-btn"><i class="fa-solid fa-arrow-right subscribeBtn"></i></button>
                   </form>
                   <p>გვიპოვე სოც.ქსელებში:</p>
-                  <a href="https://www.facebook.com/profile.php?id=100057309495790"><i class="fa-brands fa-square-facebook"></a></i>
+                  <a href="https://www.facebook.com/profile.php?id=100057309495790"><i class="fa-brands fa-square-facebook"></i></a>
                   
             </div>
         </div>
