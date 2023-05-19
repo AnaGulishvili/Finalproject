@@ -3,10 +3,11 @@
 var splide = new Splide( '.splide' );
 splide.mount();
 
+//function for მეტი button to load more information after click  
+
 document.addEventListener('DOMContentLoaded', function() {
     var aboutBtn = document.querySelector('.about-btn');
-    var carouselInfo = document.querySelector('.carousel-info');
-  
+    var carouselInfo = document.querySelector('.div-text');
     aboutBtn.addEventListener('click', function() {
       carouselInfo.classList.toggle('expanded');
       updateAboutBtnText();
@@ -55,11 +56,11 @@ const prints = [
   // Function to display prints
   function displayPrints(startIndex, endIndex) {
     const printContainer = document.getElementById('print-container');
-    printContainer.innerHTML = ''; // Clear previous prints
+    printContainer.innerHTML = ''; 
   
     for (let i = startIndex; i < endIndex; i++) {
       if (i >= prints.length) {
-        break; // Exit loop if all prints have been displayed
+        break; 
       }
   
       const print = prints[i];
@@ -78,10 +79,10 @@ const prints = [
   
   // Load more prints when the "Load More" button is clicked
   const loadMoreButton = document.getElementById('load-more');
-  let endIndex = 6; // The end index of the currently displayed prints
+  let endIndex = 6;
   
   loadMoreButton.addEventListener('click', function() {
-    endIndex += 3; // Increment the end index by 3
+    endIndex += 3; 
     displayPrints(0, endIndex);
     if (endIndex >= prints.length) {
         loadMoreButton.style.display = 'none'; 
@@ -108,3 +109,135 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  // fetch image and info from MET MUSEUM API
+  fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects/437436')
+  .then(response => response.json())
+  .then(data => {
+    var imageUrl = data.primaryImage;
+    var artistName = data.artistDisplayName;
+    var artDate=data.objectDate;
+    var artTitle=data.title;
+
+    
+    var image = document.createElement('img');
+    image.src = imageUrl;
+    image.classList.add('image-size');
+
+    var name = document.createElement('p');
+    name.innerText = artistName;
+    name.classList.add('artist-name');
+
+    var date =document.createElement('p');
+    date.innerText=artDate;
+    date.classList.add('art-date');
+
+    var title=document.createElement('p');
+    title.innerText=artTitle;
+    title.classList.add('art-title');
+
+   
+    var container = document.getElementById('image-container'); 
+    container.appendChild(image);
+    var artDesc=document.getElementById('art-description-container');
+    artDesc.appendChild(name);
+    artDesc.appendChild(title);
+    artDesc.appendChild(date);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+
+  //contact form validation function
+  var form = document.getElementById('request-form');
+  var nameInput = document.getElementById('name');
+  var emailInput = document.getElementById('email');
+  var phoneInput = document.getElementById('phone');
+  var messageInput = document.getElementById('message');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var isFormValid = true;
+
+    if (!validateField(nameInput, /^[ა-ჰ\s]+$/)) {
+      isFormValid = false;
+    }
+    if (!validateField(emailInput, /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+      isFormValid = false;
+    }
+    if (!validateField(phoneInput, /^\d{9}$/)) {
+      isFormValid = false;
+    }
+    if (!validateField(messageInput)) {
+      isFormValid = false;
+    }
+
+    if (isFormValid) {
+      // Form is valid, perform desired actions
+      // For example, you can use AJAX to send the form data to the server
+      // or display a success message
+
+      // Example: Send form data using AJAX
+      var formData = {
+        name: nameInput.value.trim(),
+        email: emailInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        message: messageInput.value.trim()
+      };
+
+      // Perform AJAX request here to send formData to the server
+      // ...
+
+      // Display a success message or perform other actions
+      alert('Form submitted successfully');
+    } else {
+      // Show error message or perform other actions
+      alert('Please fill in all required fields correctly.');
+    }
+  });
+
+  function validateField(field, regex) {
+    var value = field.value.trim();
+    if (value === '' || (regex && !regex.test(value))) {
+      field.classList.add('error');
+      return false;
+    } else {
+      field.classList.remove('error');
+      return true;
+    }
+  }
+  
+  // //subscribe form validation
+  
+  // var form = document.getElementById('subscription-form');
+  // var emailInput = document.getElementById('email-input');
+
+  
+  // form.addEventListener('submit', function(event) {
+    
+  //   event.preventDefault();
+
+  //   var email = emailInput.value.trim();
+  //   if (validateEmail(email)) {
+  //     form.submit();
+  //   } else {
+  //     alert('გთხოვთ შეიყვანოთ სწორი საფოსტო მისამართი');
+  //   }
+  // });
+  // //contact form validation function
+  // // Email validation function
+  // function validateEmail(email) {
+  //   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return emailRegex.test(email);
+  // }
+  
+
+
+
+
+
+
+
+

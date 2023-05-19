@@ -305,17 +305,19 @@
     display: flex;
     width: 90%;
     gap: 40px;
+    flex-direction: column;
    
 }
-.carousel-info .more-info {
+
+.div-text .more-info {
     display: none;
   }
   
-  .carousel-info.expanded .more-info {
+  .div-text.expanded .more-info {
     display: block;
   }
   
-  .carousel-info.expanded {
+  .div-text.expanded {
     height: auto;
   }
 
@@ -323,10 +325,10 @@
 .fa-chevron-up {
     font-size: 15px;
 } 
-
-.splide {
-    width: 50%;
-}
+/*splide styles*/
+/* .splide {
+    width:50%;
+} */
 .carousel-image {
     width: 100%; 
     height: 500px; 
@@ -340,7 +342,7 @@
     color: white;
     background-color: #f03e24;
     padding:70px;
-    width: 50%;
+    /* width: 50%; */
     line-height: 35px;
     position: relative;
     border-radius: 5px;
@@ -405,7 +407,7 @@
     flex-direction: column;
 }
 .contact-wrapper {
-    background-color: black;
+    background-color: #202020;
     height: 500px;
     padding: 50px;
     width: 500px;
@@ -606,7 +608,8 @@ textarea:focus {
   }
 .fa-square-facebook {
     font-size: 30px;
-    color: #4267B2;
+    color: black;
+
 }
 .footer-nav-wrapper > h3,
 .subscribe-wrapper> h3 {
@@ -616,20 +619,25 @@ textarea:focus {
     margin-bottom: 20px;
 
     }
+
 .footer-nav-ul {
     font-family: "BPG Sans", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
-    line-height: 30px;
+    line-height: 40px;
 
 }
 .footer-logo-image {
-    width: 200px;
+    width: 250px;
+    
 }
-.subscribe-wrapper> h3{
+.subscribe-wrapper> p{
+    font-family: "BPG Sans", sans-serif;
+    font-size: 25px;
+    color: white;
 
 }
-.line {
+.footer-line {
     height: 1px;
     background-color: white;
     width: 100%;
@@ -642,6 +650,73 @@ textarea:focus {
     display: flex;
     gap: 70px;
   }
+  .subscribeBtn {
+    opacity: 0.6;
+  }
+  /* fetched image styles */
+
+  .image-wrapper {
+    background-color: black;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    border-radius: 5px;
+    padding: 50px;
+    gap: 100px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    margin-top: 50px;
+
+  }
+  
+ 
+  .image-wrapper > h2 {
+    font-family: "BPG Sans", sans-serif;
+    font-size: 35px;
+    color: white;
+  }
+  .artistNameStyle {
+    font-family: "BPG Sans", sans-serif;
+    font-size: 35px;
+    color: white;
+
+  }
+  .art-info-wrapper {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+  }
+  .art-info-p {
+    width: 50%;
+    font-family: "BPG Sans", sans-serif;
+    font-size: 35px;
+    color: white;
+    line-height: 45px;
+  
+   
+
+  }
+   #image-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    
+    
+  } 
+
+#art-description-container {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+}
+  
+  
 
 
   
