@@ -163,7 +163,8 @@
 
     }
     .contact-wrapper {
-        width: 90%;
+        width: 80%;
+        
     }
    .subscribe-wrapper {
     font-size: 16px;
@@ -176,6 +177,12 @@
     }
     .subscription-form input[type="email"]::placeholder {
         display: none;
+    }
+    .li-active {
+        width: 80%;
+    }
+    .nav-container {
+        height: 500px;
     }
 
 }
